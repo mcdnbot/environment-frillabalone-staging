@@ -1,0 +1,113 @@
+Step: build-step-credential-initializer-c4mfz:
+
+{"level":"warn","ts":1556184081.8154879,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556184081.815933,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-*******-demo-app1-master-releas-phk4g:
+
+{"level":"warn","ts":1556184082.4179168,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556184083.5541077,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/*******/demo-app1\" @ \"v0.0.4\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-25T09:21:26Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:eb2ea29d93ac020836f651bf906d13666384e29f
+time="2019-04-25T09:21:26Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-setup-**-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: build-step-build-python-unittest:
+
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+Step: build-step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image python:3.6-alpine     
+ERROR: logging before flag.Parse: E0425 09:21:34.543323       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0425 09:21:34.546915       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/04/25 09:21:34 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:dec7c09644364b20034a35cccf1fb25fb2a1b09a22ccd21c09f5131793146200: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:3.6-alpine     
+2019/04/25 09:21:35 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] Checking for cached layer 10.19.242.226:5000/mcdn-test/cache:1c82ea180d5219a59df460e198162956f344a78bfbb2858a407974217bb7bcad... 
+2019/04/25 09:21:36 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Using caching version of cmd: RUN pip install -r /requirements.txt 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/templates] 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/app.py] 
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] COPY requirements.txt /                      
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] RUN pip install -r /requirements.txt         
+[36mINFO[0m[0002] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0003] Using files from context: [/workspace/source/templates] 
+[36mINFO[0m[0003] COPY ./templates /app/templates              
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] Using files from context: [/workspace/source/app.py] 
+[36mINFO[0m[0003] COPY app.py /app                             
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] WORKDIR /app                                 
+[36mINFO[0m[0003] cmd: workdir                                 
+[36mINFO[0m[0003] Changed working directory to /app            
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] EXPOSE 8080                                  
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] CMD ["python", "app.py"]                     
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+2019/04/25 09:21:37 existing blob: sha256:3a45eb710779742d5788647b8e4f1046ec0e476796532d93838d38a7b72afa14
+2019/04/25 09:21:37 existing blob: sha256:dd4853571cc7e489db8127107442851f2a6e314ec812a1020fe15418919fed18
+2019/04/25 09:21:37 existing blob: sha256:f4700a9d59e5099cae4957f0e3d40e04a79ffcdbfafb286af1c2d7ac2c517cd2
+2019/04/25 09:21:37 existing blob: sha256:59c926705abfce33273837742a03ad5b0208430695d4364f4b6b4629a5d720de
+2019/04/25 09:21:37 existing blob: sha256:bdf0201b3a056acc4d6062cc88cd8a4ad5979983bfb640f15a145e09ed985f92
+2019/04/25 09:21:37 pushed blob: sha256:8ad5d380d2597bd32fa4657332a5fd3ce20d639f88cdeecc5b810f9cb9f033ec
+2019/04/25 09:21:37 pushed blob: sha256:fff88498a74dd321e69fe2401c249e9216614fae4ffebe5991867ae1ac2eff75
+2019/04/25 09:21:37 pushed blob: sha256:cffcf69ac6dd1dabad90fc601484dd4fc9489a243e654f355ed97d082b8100ef
+2019/04/25 09:21:37 pushed blob: sha256:f329720ccc56be15e2fb009d3de1303c1bbc0151dc54147878b4fb9d06690232
+2019/04/25 09:21:38 pushed blob: sha256:cbe33a6d8719b60c6833c18bd4f3850adeeaa3522b9e9a0710b2951e4c3c7f28
+2019/04/25 09:21:38 10.19.242.226:5000/*******/demo-app1:0.0.4: digest: sha256:1bde7dad37518d0830dca997108e565946811c4f069b7972317b1c9dbb20a212 size: 1724
+Step: build-step-build-post-build:
+
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+Step: build-step-promote-changelog:
+
+Converted /workspace/source/charts/demo-app1 to an unshallow repository
+Generating change log from git ref eb2ea29d93ac020836f651bf906d13666384e29f => 79f42d370b1fb08bbd18ae49c855ccaf9ff92827
+WARNING: Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+WARNING: Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+Finding issues in commit messages using git format
+WARNING: No release found for *******/demo-app1 and tag v0.0.4 so creating a new release
+Updated the release information at https://github.com/*******/demo-app1/releases/tag/v0.0.4
+generated: /workspace/source/charts/demo-app1/templates/release.yaml
+Created Release demo-app1-0-0-4 resource in namespace **
+Updating PipelineActivity *******-demo-app1-master-4 with version 0.0.4
+Updated PipelineActivities *******-demo-app1-master-4 with release notes URL: https://github.com/*******/demo-app1/releases/tag/v0.0.4
+Step: build-step-promote-helm-release:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file demo-app1-0.0.4.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: build-step-promote-**-promote:
+
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app demo-app1 version 0.0.4 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-frillabalone-staging/pull/4
+
+Pull Request https://github.com/*******/environment-frillabalone-staging/pull/4 is merged at sha 6f7ed9658bfb6999999294a5c33569a69872d21d
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names demo-app1, **-demo-app1, **-staging-demo-app1
